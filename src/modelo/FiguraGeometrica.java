@@ -8,20 +8,16 @@ package modelo;
 public abstract class FiguraGeometrica {
     
     //Declaramos los atributos
-    private String nombre;
+    protected String nombre;
 
     public FiguraGeometrica(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
     public String getNombre() {
         return nombre;
     }
-     
+    
     abstract double calcularArea();
     
     public void mostrarInfo(){
@@ -32,7 +28,9 @@ public abstract class FiguraGeometrica {
         
         FiguraGeometrica Circulo = new Circulo(5, "Circulo");
         FiguraGeometrica Rectangulo = new Rectangulo(6, 4,"Rectangulo");
-        FiguraGeometrica Triangulo = new Triangulo(5, 3, "Triangulo");
+        FiguraGeometrica Equilatero = new TrianguloEquilatero (5);
+        FiguraGeometrica Isosceles = new TrianguloIsosceles (5,6);
+        FiguraGeometrica Escaleno = new TrianguloEscaleno (7,6,5);
 
         Circulo.mostrarInfo();
         System.out.println("Area: " + Circulo.calcularArea());
@@ -42,8 +40,17 @@ public abstract class FiguraGeometrica {
         System.out.println("Area: " + Rectangulo.calcularArea());
         System.out.println();
 
-        Triangulo.mostrarInfo();
-        System.out.println("Area: " + Triangulo.calcularArea());
+        Equilatero.mostrarInfo();
+        System.out.println("Area: " + Equilatero.calcularArea());
+        System.out.println();
+        
+        Isosceles.mostrarInfo();
+        System.out.println("Area: " + Isosceles.calcularArea());
+        System.out.println();
+        
+        Escaleno.mostrarInfo();
+        System.out.println("Area: " + Escaleno.calcularArea());
+        System.out.println();
     }
             
 }
