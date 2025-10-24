@@ -3,7 +3,7 @@ package modelo;
 
 /**
  *
- * @author LENOVO
+ * @author Yedinson
  */
 public class Rectangulo extends FiguraGeometrica {
     
